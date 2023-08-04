@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "node-sass": "^9.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7"
+    "react-router-dom": "6",
+    "rxjs": "^7.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

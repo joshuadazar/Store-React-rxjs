@@ -1,0 +1,19 @@
+@import '../../scss/colors';
+
+.user-details {
+  &__container {
+    border-bottom: 3px solid;
+    border-bottom-color: $pink;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem .5rem;
+
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    list-style: none;
+  }
+}
