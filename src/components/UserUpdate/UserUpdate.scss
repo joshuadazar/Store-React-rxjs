@@ -1,0 +1,26 @@
+@import '../../scss/colors';
+
+.user-update {
+  border-bottom: solid 3px $pink;
+  border-top: solid 3px $pink;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    &-field {
+      display: flex;
+      gap: 1rem;
+      padding: .5rem;
+    }
+  }
+
+  .btn {
+    max-width: fit-content;
+  }
+}

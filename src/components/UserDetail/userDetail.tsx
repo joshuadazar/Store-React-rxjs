@@ -21,8 +21,8 @@ export default function UserDetail() {
   }, [user]);
 
   function updateUser() {
-    console.log(nav)
-    nav('update');
+    console.log(nav);
+    nav('update', { state: { user: user } });
   }
 
   return (
@@ -52,7 +52,7 @@ export default function UserDetail() {
           Location: {user.location?.country} / {user.location?.city}
         </li>
       </ul>
-      <Outlet/>
+      <Outlet />
     </section>
   );
 }
