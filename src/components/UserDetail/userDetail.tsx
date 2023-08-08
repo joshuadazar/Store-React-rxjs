@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './userDetail.scss';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import usersStore from '../../store/users';
 import Iuser from '../../models/Iuser';
 
@@ -10,27 +10,34 @@ export default function UserDetail() {
     email: '',
   };
   const [user, setUser] = useState<Iuser>(emptyUser);
+  const nav = useNavigate();
 
   useEffect(() => {
     let suscription = usersStore
       .SelectedUser()
       .getSelectedUser()
       .subscribe(setUser);
-    console.log(user);
     return () => suscription.unsubscribe();
   }, [user]);
+
+  function updateUser() {
+    console.log(nav)
+    nav('update');
+  }
 
   return (
     <section className="user-details">
       <div className="user-details__container">
-        <h1 className="user-details__title">
-          User details:
-        </h1>
+        <h1 className="user-details__title">User details:</h1>
         <Link to="/" className="btn primary">
-            Back to user List
+          Back to user List
         </Link>
+
+        <button className="btn primary" onClick={updateUser}>
+          Edit Information
+        </button>
       </div>
-      
+
       <ul className="user-details__list">
         <li>
           <img src={user.picture?.medium} alt="" />
@@ -45,6 +52,7 @@ export default function UserDetail() {
           Location: {user.location?.country} / {user.location?.city}
         </li>
       </ul>
+      <Outlet/>
     </section>
   );
 }

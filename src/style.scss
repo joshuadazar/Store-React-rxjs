@@ -7,14 +7,16 @@
 
 .btn {
   background-color: $green;
+  border: none;
   color: white;
+  cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 1rem;
   padding: 0.4rem;
   text-decoration: none;
   user-select: none;
-  max-height: 30px;
+  max-height: 70%;
 
   &:hover {
     background-color: lighten($green, 5%);

@@ -16,7 +16,6 @@ subject.next({ ...state, loading: true });
 let limitUsersValue = 5;
 
 let setLimitUsers = (limit) => {
-  console.log(limit, 'service');
   limitUsersValue = limit;
   getUsers();
 };
@@ -35,7 +34,6 @@ const getSelectedUser = () => {
 
 const setSelectedUser = (user) => {
   selectedUser$.next(user);
-  console.log(user, 'service');
 };
 
 function getUsers() {
